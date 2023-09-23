@@ -1,12 +1,17 @@
+server:
+  port: 8187
+  servlet:
+    context-path: /data-migration/api
 spring:
   jpa:
     database: POSTGRESQL
     show-sql: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
   datasource:
     platform: postgres
     url: jdbc:postgresql://localhost:5432/cinema
     username: postgres
     password: 2204
     driverClassName: org.postgresql.Driver
+
