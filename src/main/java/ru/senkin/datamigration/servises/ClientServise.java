@@ -14,8 +14,11 @@ public class ClientServise {
 
     private final ClientRepositoty clientRepository;
 
-    public Optional<Client> findById(Long id) {
+    public Optional<Client> findById(long id) {
         return clientRepository.findById(id);
     }
 
+    public java.util.List<Client> findAll() {
+        return clientRepository.findAll();
+    }
 }

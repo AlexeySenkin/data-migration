@@ -10,6 +10,7 @@ import ru.senkin.datamigration.entities.Client;
 @Repository
 public interface ClientRepositoty extends JpaRepository<Client, Long>{
     
-    Optional<Client> findById(Long id);
-    
+    Optional<Client> findById(long id);
+
+
 }

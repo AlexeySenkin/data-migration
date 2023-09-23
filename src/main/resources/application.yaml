@@ -1,7 +1,7 @@
 server:
   port: 8187
   servlet:
-    context-path: /data-migration/api
+    context-path: /datamigration/api
 spring:
   jpa:
     database: POSTGRESQL

@@ -25,13 +25,30 @@ public class PgController {
      * @param id идентификатор
      * @return клиент
      */
-    @GetMapping("/client{id}")
-    public ResponseEntity<?> findClientById(@PathVariable Long id ) {
+    @GetMapping("/client/{id}")
+    public ResponseEntity<?> findClientById(@PathVariable long id ) {
         try {
             log.debug("получение клиента по id, {}", id);
             return ResponseEntity.ok().body(clientServise.findById(id)); 
         } catch (Exception e) {
-            log.debug("Ощибка получения клиента по id, {}", id);
+            log.debug("Ошибка получения клиента по id, {}", id);
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
+    /**
+     * Возвращаети сдиента по идентификатору
+     * 
+     * @param id идентификатор
+     * @return клиент
+     */
+    @GetMapping("/clients")
+    public ResponseEntity<?> findClients() {
+        try {
+            log.debug("получение всех клиентов");
+            return ResponseEntity.ok().body(clientServise.findAll()); 
+        } catch (Exception e) {
+            log.debug("Ошибка получения всех клиентов");
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
